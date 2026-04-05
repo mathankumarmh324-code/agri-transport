@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agri Transport</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right,#e8f5e9,#ffffff);
+    color:black; /* Default text black */
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 30px;
+    background: rgba(0,128,0,0.85);
+    backdrop-filter: blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:black; /* logo text black */
+    font-weight:bold;
+}
+
+.nav-links a{
+    color:black; /* nav links black */
+    margin-left:20px;
+    text-decoration:none;
+}
+
+/* VIDEO */
+.video-container{
+    height:35vh;
+    margin:20px;
+    border-radius:15px;
+    overflow:hidden;
+    position:relative;
+}
+
+.video-container video{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:translate(-50%,-50%);
+}
+
+/* OVERLAY */
+.video-container::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background: linear-gradient(
+        to right,
+        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.4)
+    );
+}
+
+/* HERO TEXT */
+.video-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    color:black; /* hero text black */
+    z-index:2;
+    width:90%;
+}
+
+.video-text span{
+    font-size:14px;
+    letter-spacing:2px;
+    color:black;
+}
+
+.video-text p{
+    margin-top:10px;
+    color:black;
+}
+
+/* HERO BUTTON / GLASS EFFECT */
+.hero-btn, .btn{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:25px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    color:black; /* button text black */
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 4px 30px rgba(0,0,0,0.1);
+}
+
+.hero-btn:hover, .btn:hover{
+    transform:scale(1.1);
+    background: rgba(255,255,255,0.35);
+}
+
+/* SECTION */
+.section{
+    padding:50px 20px;
+    text-align:center;
+}
+
+/* CARDS */
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.card{
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    padding:20px;
+    width:260px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+    text-align:center;
+    color:black; /* card text black */
+    font-weight:500;
+}
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* SERVICE MESSAGE */
+#serviceMsg{
+    margin-top:20px;
+    font-weight:bold;
+    color:black;
+}
+
+/* BOOKING */
+.booking-box{
+    max-width:400px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.booking-box input,
+.booking-box select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:10px;
+    color:black; /* input text black */
+    border:1px solid #ccc;
+}
+
+/* CONTACT */
+.contact-box{
+    max-width:450px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    text-align:left;
+}
+
+.contact-box input,
+.contact-box textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #ccc;
+    color:black; /* input text black */
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus{
+    border-color:green;
+    box-shadow:0 0 8px rgba(0,128,0,0.3);
+    outline:none;
+}
+
+/* FOOTER */
+.footer{
+    background:#f1f1f1;
+    color:black; /* footer text black */
+    padding:20px;
+    text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">🚜 Agri Transport</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- HERO VIDEO -->
+<div class="video-container">
+    <video autoplay muted loop playsinline>
+        <source src="yd.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-text">
+        <span>Smart Agri Logistics</span>
+        <p>Fast • Reliable • Affordable</p>
+        <button class="hero-btn" onclick="scrollToSection('booking')">
+            Get Started 🚀
+        </button>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="cards">
+        <div class="card">
+            🚛 Vehicle Booking<br><br>
+            <button class="btn" onclick="bookService('Vehicle Booking')">Book Now</button>
+        </div>
+
+        <div class="card">
+            📦 Goods Transport<br><br>
+            <button class="btn" onclick="bookService('Goods Transport')">Send Now</button>
+        </div>
+
+        <div class="card">
+            📍 Live Tracking<br><br>
+            <button class="btn" onclick="bookService('Live Tracking')">Track Now</button>
+        </div>
+    </div>
+
+    <p id="serviceMsg"></p>
+</div>
+
+<!-- BOOKING -->
+<div id="booking" class="section">
+    <h2>Book Transport</h2>
+
+    <div class="booking-box">
+        <input id="name" placeholder="Name">
+        <input id="location" placeholder="Location">
+
+        <select id="vehicle">
+            <option value="">Vehicle</option>
+            <option>Mini Truck</option>
+            <option>Tractor</option>
+            <option>Lorry</option>
+        </select>
+
+        <button class="btn" onclick="bookNow()">Confirm</button>
+        <p id="bookingMsg"></p>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+    <h2>Contact</h2>
+
+    <div class="contact-box">
+        <input id="cname" placeholder="Name">
+        <input id="cemail" placeholder="Email">
+        <textarea id="cmsg" placeholder="Message"></textarea>
+
+        <button class="btn" onclick="sendMsg()">Send Message</button>
+        <p id="contactMsg"></p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Agri Transport 🚜
+</div>
+
+<script>
+
+function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+// Service buttons
+function bookService(serviceName){
+    document.getElementById('serviceMsg').innerText = "✅ " + serviceName + " Requested!";
+}
+
+// Booking form
+function bookNow(){
+    const name = document.getElementById('name');
+    const location = document.getElementById('location');
+    const vehicle = document.getElementById('vehicle');
+    const bookingMsg = document.getElementById('bookingMsg');
+
+    if(name.value=="" || location.value=="" || vehicle.value==""){
+        bookingMsg.innerText="⚠ Fill all fields";
+        bookingMsg.style.color="red";
+    } else {
+        bookingMsg.innerText="✅ Booked!";
+        bookingMsg.style.color="green";
+    }
+}
+
+// Contact form
+function sendMsg(){
+    const cname = document.getElementById('cname');
+    const cemail = document.getElementById('cemail');
+    const cmsg = document.getElementById('cmsg');
+    const contactMsg = document.getElementById('contactMsg');
+
+    if(cname.value=="" || cemail.value=="" || cmsg.value==""){
+        contactMsg.innerText="⚠ Fill all fields";
+        contactMsg.style.color="red";
+    } else {
+        contactMsg.innerText="✅ Sent!";
+        contactMsg.style.color="green";
+    }
+}
+
+</script>
+
+</body>
+</html>
